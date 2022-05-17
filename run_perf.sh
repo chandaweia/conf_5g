@@ -1,8 +1,8 @@
 #!/bin/bash
 #RUN COMMAND: ./run_perf.sh perf_gnb_20mbps.data
 #OUTPUT: (1)perf_gnb_20mbps.data   and   (2)perf_gnb_20mbps.data-data.txt
-echo $1
-DIRPATH=/usr/local/cuidi/perfdata_v2
+CURPATH=`pwd`
+DIRPATH=$CURPATH/perfdata_v2
 DIRTXT=$DIRPATH/perfreport
 TIME=10
 
