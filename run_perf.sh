@@ -14,15 +14,13 @@ fi
 
 if [ ! -d $DIRPATH ];then
 	mkdir $DIRPATH
-else 
-	echo "perf data will save to:"$DIRPATH/$1
 fi
+echo "perf data will save to:"$DIRPATH/$1
 
 if [ ! -d $DIRTXT ];then
         mkdir $DIRTXT
-else
-        echo "perf report will save to:"$DIRTXT/$1-data.txt
 fi
+echo "perf report will save to:"$DIRTXT/$1-data.txt
 
 sudo perf record -a -F 99 -g -p $(pgrep nr-softmodem -d ',') -o $DIRPATH/$1 -- sleep $TIME
 
