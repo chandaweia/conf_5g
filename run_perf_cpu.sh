@@ -3,9 +3,9 @@
 #OUTPUT: (1)perf_gnb_1ue_4mbps_dl.data   and   (2)perf_gnb_1ue_4mbps_dl.data-data.txt
 #OUTPUT: cpu_1_ue_4_mbps_ul_gnb.txt
 
-CURPATH=`pwd`
+CURPATH=`pwd`/DataTest
 DIRPATH=$CURPATH/perfdata_test
-DIRTXT=$DIRPATH/perfreport_test
+DIRTXT=$CURPATH/perfreport_test
 CPUDIR=$CURPATH/cpuusage_test
 TIME=60
 
@@ -14,6 +14,10 @@ if [ $# != 2 ]; then
 	echo "Please input:./run_perf_cpu.sh [perf.data] [cpu.txt]"
 	echo "	eg. ./run_perf_cpu.sh perf_gnb_1ue_4mbps_dl.data cpu_gnb_1ue_4mbps_dl.txt"
 	exit
+fi
+
+if [ ! -d $CURPATH ];then
+        mkdir $CURPATH
 fi
 
 if [ ! -d $DIRPATH ];then
