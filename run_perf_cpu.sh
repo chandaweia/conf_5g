@@ -9,9 +9,10 @@ DIRTXT=$DIRPATH/perfreport_test
 CPUDIR=$CURPATH/cpuusage_test
 TIME=60
 
-if [ $# != 1 ]; then
+if [ $# != 2 ]; then
 	echo "Missing number of parameters!"
-	echo "Please input:./run_perf.sh [perf.data]"
+	echo "Please input:./run_perf_cpu.sh [perf.data] [cpu.txt]"
+	echo "	eg. ./run_perf_cpu.sh perf_gnb_1ue_4mbps_dl.data cpu_gnb_1ue_4mbps_dl.txt"
 	exit
 fi
 
@@ -30,16 +31,9 @@ sudo perf record -a -F 99 -g -p $(pgrep nr-softmodem -d ',') -o $DIRPATH/$1 -- s
 sudo perf report -i $DIRPATH/$1 --no-children > $DIRTXT/$1-data.txt
 
 if [ ! -d $CPUDIR ];then
-        mkdir $DIRPATH
+        mkdir $CPUDIR
 fi
-echo "CPU Usage Record will save to:"$DIRPATH/$1
-if [ ! -d $DIRPATH ];then
-        mkdir $DIRPATH
-fi
+echo "CPU Usage Record will save to:"$CPUDIR/$2
 
-if [ ! -d $DIRPATH ];then
-        mkdir $DIRPATH
-fi
-
-python monitor_cpuusage.py $TIME > $DIRPATH/$1
+python monitor_cpuusage.py $TIME > $CPUDIR/$2
 
