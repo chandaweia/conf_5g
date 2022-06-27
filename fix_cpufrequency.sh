@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 echo "Run it in root"
-sudo su
+#sudo su
 
 sudo apt-get install -y cpufrequtils
 sudo apt install -y linux-tools-$(uname -r)
@@ -19,6 +19,6 @@ echo "Install Complete!"
 #echo "check watch -n.1 "grep \"^[c]pu MHz\" /proc/cpuinfo""
 
 
-checkcpu="watch -n.1 \"grep \"^[c]pu MHz\" /proc/cpuinfo\""
+checkcpu='watch -n.1 "grep \"^[c]pu MHz\" /proc/cpuinfo"'
 echo "Check CPU frequency by: $checkcpu"
 echo "Check hyperthreading by: lscpu"
