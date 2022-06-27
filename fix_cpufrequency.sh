@@ -15,7 +15,7 @@ sudo /etc/init.d/cpufrequtils restart
 echo off > /sys/devices/system/cpu/smt/control
 cpupower idle-set -D 0
 
-echo "Install Complete!"
+echo -e "\nInstall Complete!"
 #echo "check watch -n.1 "grep \"^[c]pu MHz\" /proc/cpuinfo""
 
 
