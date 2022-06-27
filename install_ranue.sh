@@ -9,16 +9,17 @@ fi
 cd /usr/local/cuidi/openairinterface5g/cmake_targets/
 ./build_oai -I -w USRP
 
-if [ $1=="ran" ];then
+if [ $1 == "ran" ];then
     ./build_oai -c --gNB -w USRP
-elif [ $1=="ue" ];then
+elif [ $1 == "ue" ];then
     ./build_oai -c --nrUE -w SIMU
-elif [ $1=="both" ];then
+elif [ $1 == "both" ];then
     ./build_oai --gNB --nrUE -w SIMU
 else
     echo "Wrong parameter!"
 fi
 
+echo -e "\nInstall $1 Succesfully!"
 
 
 
