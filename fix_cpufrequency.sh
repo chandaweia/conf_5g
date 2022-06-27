@@ -22,3 +22,5 @@ echo -e "\nInstall Complete!"
 checkcpu='watch -n.1 "grep \"^[c]pu MHz\" /proc/cpuinfo"'
 echo "Check CPU frequency by: $checkcpu"
 echo "Check hyperthreading by: lscpu"
+echo -n "Current kernel is:"
+uname -r
