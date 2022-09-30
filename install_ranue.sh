@@ -6,7 +6,7 @@ if [ $# != 1 ]; then
 	exit
 fi
 
-cd /usr/local/cuidi/openairinterface5g/cmake_targets/
+cd /usr/local/cuidi/oai-onvm/cmake_targets/
 ./build_oai -I -w USRP
 
 if [ $1 == "ran" ];then
