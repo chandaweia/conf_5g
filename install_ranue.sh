@@ -1,4 +1,5 @@
 #!/bin/bash -e
+OAI_ONVM=/usr/local/cuidi
 
 if [ $# != 1 ]; then
 	echo "Missing number of parameters!"
@@ -6,7 +7,7 @@ if [ $# != 1 ]; then
 	exit
 fi
 
-cd /usr/local/cuidi/oai-onvm/cmake_targets/
+cd $OAI_ONVM/oai-onvm/cmake_targets/
 ./build_oai -I -w USRP
 
 if [ $1 == "ran" ];then
