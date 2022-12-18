@@ -1,5 +1,6 @@
 #!/bin/bash -e
-OAI_ONVM=$HOME
+current_path="$PWD"  # same as `pwd`
+OAI_ONVM=$(dirname "$PWD")
 
 if [ $# != 1 ]; then
 	echo "Missing number of parameters!"
