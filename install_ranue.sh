@@ -1,5 +1,5 @@
 #!/bin/bash -e
-OAI_ONVM=/usr/local/cuidi
+OAI_ONVM=$HOME
 
 if [ $# != 1 ]; then
 	echo "Missing number of parameters!"
