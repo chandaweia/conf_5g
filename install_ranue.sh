@@ -1,7 +1,7 @@
 #!/bin/bash -e
 current_path="$PWD"  # same as `pwd`
 OAI_ONVM=$(dirname "$PWD")
-echo export HOME=OAI_ONVM >> /root/.bashrc
+echo export HOME=$OAI_ONVM >> /root/.bashrc
 
 if [ $# != 1 ]; then
 	echo "Missing number of parameters!"
