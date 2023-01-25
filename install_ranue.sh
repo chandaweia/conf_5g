@@ -26,3 +26,4 @@ echo -e "\nInstall $1 Succesfully!"
 
 
 
+
